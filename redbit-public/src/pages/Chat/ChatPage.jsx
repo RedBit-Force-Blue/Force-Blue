@@ -1,9 +1,8 @@
 import React from 'react'
-import './TestChatPage.css'
+import './ChatPage.css'
 
-export const TestChatPage = () => {
+export const ChatPage = () => {
     return (
-
         <div className='bodyTest'>
             <div className="--dark-theme" id="chat">
                 <div className="chat__conversation-board">
@@ -28,7 +27,7 @@ export const TestChatPage = () => {
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
-                                    
+
                                 </span>
                             </div>
                         </div>
@@ -70,6 +69,5 @@ export const TestChatPage = () => {
                 </div>
             </div>
         </div>
-
     )
 }

@@ -4,7 +4,7 @@ import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
-import { TestChatPage } from "./pages/TestPage/TestChatPage"
+import { ChatPage } from "./pages/Chat/ChatPage"
 
 function App() {
   try {
@@ -23,8 +23,8 @@ function App() {
             element:<TestPage/>
           },
           {
-            path: '/testchatui',
-            element: <TestChatPage/>
+            path: '/chat',
+            element: <ChatPage/>
           }
         ]
         }
