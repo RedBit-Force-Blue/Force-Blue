@@ -13,6 +13,15 @@
     background-color: #2b0185b7;
 }
 
+#chat .chat__conversation-board::-webkit-scrollbar-thumb {
+    background: #8147fc;
+    border-radius: 10px;
+}
+
+#chat .chat__conversation-board::-webkit-scrollbar {
+    width: 5px;
+}
+
 #chat {
     background: var(--chat-background);
     box-sizing: border-box;
@@ -67,7 +76,7 @@
 }
 
 #chat .chat__conversation-board__message-container.reversed .chat__conversation-board__message__person {
-    margin: 0 0 0 1.2em;
+    margin: 1 0 0 1.2em;
 }
 
 #chat .chat__conversation-board__message-container.reversed .chat__conversation-board__message__options {
