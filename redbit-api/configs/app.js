@@ -7,6 +7,8 @@ const helmet = require('helmet');
 const app = express();
 const port = process.env.PORT || 3020 || 3200;
 
+const userRoutes = require('../src/User/user.routes')
+
 
 /* ----- CONFIG SERVER ----- */
 app.use(express.urlencoded({ extended: false }));
@@ -16,6 +18,8 @@ app.use(helmet());
 app.use(morgan('dev'));
 
 /* ----- IMPORT ROUTES ----- */
+
+app.use('/user', userRoutes)
 
 /* ----- DEPLOYED SERVER ----- */
 exports.initServer = () => {
