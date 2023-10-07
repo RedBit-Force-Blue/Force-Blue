@@ -32,6 +32,7 @@ export const ChatPage = () => {
                             </div>
                         </div>
 
+
                     </div>
 
                     {/* USUARIO 2 */}
@@ -51,6 +52,94 @@ export const ChatPage = () => {
                                 <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias eveniet consectetur fugiat ut, numquam magnam tempore quia a deserunt cum facilis doloremque dolorem obcaecati voluptatibus, nihil placeat veniam omnis. Amet!</span>
                             </div>
                         </div>
+
+                    </div>
+
+                    {/* USUARIO 2 */}
+                    <div className="chat__conversation-board__message-container reversed">
+
+                        {/* IMAGEN DE USUARIO */}
+                        <div className="chat__conversation-board__message__person">
+                            <div className="chat__conversation-board__message__person__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Dennis Mikle" />
+                            </div>
+                            <span className="chat__conversation-board__message__person__nickname">Dennis Mikle</span>
+                        </div>
+
+                        {/* MENSAJE DE USUARIO */}
+                        <div className="chat__conversation-board__message__context">
+                            <div className="chat__conversation-board__message__bubble">
+                                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias eveniet consectetur fugiat ut, numquam magnam tempore quia a deserunt cum facilis doloremque dolorem obcaecati voluptatibus, nihil placeat veniam omnis. Amet!</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* USUARIO 2 */}
+                    <div className="chat__conversation-board__message-container reversed">
+
+                        {/* IMAGEN DE USUARIO */}
+                        <div className="chat__conversation-board__message__person">
+                            <div className="chat__conversation-board__message__person__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Dennis Mikle" />
+                            </div>
+                            <span className="chat__conversation-board__message__person__nickname">Dennis Mikle</span>
+                        </div>
+
+                        {/* MENSAJE DE USUARIO */}
+                        <div className="chat__conversation-board__message__context">
+                            <div className="chat__conversation-board__message__bubble">
+                                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias eveniet consectetur fugiat ut, numquam magnam tempore quia a deserunt cum facilis doloremque dolorem obcaecati voluptatibus, nihil placeat veniam omnis. Amet!</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* USUARIO 2 */}
+                    <div className="chat__conversation-board__message-container reversed">
+
+                        {/* IMAGEN DE USUARIO */}
+                        <div className="chat__conversation-board__message__person">
+                            <div className="chat__conversation-board__message__person__avatar">
+                                <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Dennis Mikle" />
+                            </div>
+                            <span className="chat__conversation-board__message__person__nickname">Dennis Mikle</span>
+                        </div>
+
+                        {/* MENSAJE DE USUARIO */}
+                        <div className="chat__conversation-board__message__context">
+                            <div className="chat__conversation-board__message__bubble">
+                                <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias eveniet consectetur fugiat ut, numquam magnam tempore quia a deserunt cum facilis doloremque dolorem obcaecati voluptatibus, nihil placeat veniam omnis. Amet!</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* USUARIO 1 */}
+                    <div className="chat__conversation-board__message-container">
+
+                        {/* IMAGEN DE USUARIO */}
+                        <div className="chat__conversation-board__message__person">
+                            <div className="chat__conversation-board__message__person__avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Usuario" />
+                            </div>
+                            <span className="chat__conversation-board__message__person__nickname">Monika Figi</span>
+                        </div>
+
+                        {/* MENSAJE DE USUARIO */}
+                        <div className="chat__conversation-board__message__context">
+                            <div className="chat__conversation-board__message__bubble">
+                                <span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad quis sapiente. Incidunt hic dolorum beatae earum, consequatur quod sapiente, laborum ducimus voluptatum nisi voluptas, veritatis nobis sint doloremque laudantium.
+
+                                </span>
+                            </div>
+                        </div>
+
 
                     </div>
 
