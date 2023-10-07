@@ -9,6 +9,8 @@ const port = process.env.PORT || 3020 || 3200;
 
 const userRoutes = require('../src/User/user.routes')
 const tagRoutes = require('../src/Tag/tag.routes')
+const chatRoutes = require('../src/Chat/chat.routes')
+
 
 /* ----- CONFIG SERVER ----- */
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +23,7 @@ app.use(morgan('dev'));
 
 app.use('/user', userRoutes)
 app.use('/tag', tagRoutes)
+app.use('/chat', chatRoutes)
 
 /* ----- DEPLOYED SERVER ----- */
 exports.initServer = () => {
