@@ -16,7 +16,6 @@ app.use(helmet());
 app.use(morgan('dev'));
 
 /* ----- IMPORT ROUTES ----- */
-app.use('/user', require('../src/user/user.routes'));
 
 /* ----- DEPLOYED SERVER ----- */
 exports.initServer = () => {
