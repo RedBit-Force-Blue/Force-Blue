@@ -16,6 +16,7 @@ app.use(helmet());
 app.use(morgan('dev'));
 
 /* ----- IMPORT ROUTES ----- */
+app.use('/comment', require('../src/comment/comment.routes'));
 
 /* ----- DEPLOYED SERVER ----- */
 exports.initServer = () => {
