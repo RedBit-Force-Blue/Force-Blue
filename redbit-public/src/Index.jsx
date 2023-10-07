@@ -4,6 +4,7 @@ import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
+import { TestChatPage } from "./pages/TestPage/TestChatPage"
 
 function App() {
   try {
@@ -20,6 +21,10 @@ function App() {
           {
             path: '/testPage', 
             element:<TestPage/>
+          },
+          {
+            path: '/testchatui',
+            element: <TestChatPage/>
           }
         ]
         }
