@@ -2,35 +2,35 @@
 
 const bcrypt = require('bcrypt');
 
-// funcion para validar que cada parametro venga y si no avisarle que hacen falta datos
-exports.validateData = (data)=>{
-    let keys = Object.keys(data), msg = '';
-    for(let key of keys){
-        if( data[key] !== null &&
-            data[key] !== undefined &&
-            data[key] !== '') continue;
-        msg += `Params ${key} is required\n`;
-    }
-    return msg.trim();
-}
-  
-
-// funcion para encriptar password
-exports.encrypt = async (password) => {
+/* --- ENCRYOP --- */
+exports.encrypt = async(data = '') => {
     try {
-        return await bcrypt.hash(password, 12);
+        return await bcrypt.hash(data, 10);
     } catch (err) {
-        console.log(err)
+        console.error(err);
         return err;
     }
 }
-// validacion de contraseña
-exports.checkPassword = async (password,hash) =>{
+
+/* --- CHECK HASH --- */
+exports.check = async(text = '', hash = '') => {
     try {
-        return await bcrypt.compare(password, hash)
+        return await bcrypt.compare(text, hash);
     } catch (err) {
-        console.log(err)
-        return false;
+        console.error(err);
+        return err;
     }
 }
- 
+
+/* --- VALIDATE DATA --- */
+exports.verify = (data = {}) => {
+    const keys = Object.keys(data);
+    let msg = '';
+    for (const key of keys) {
+        if (data[key] !== null &&
+            data[key] !== undefined &&
+            data[key] !== '') continue
+        msg += `Param ${key} is required\n`;
+    }
+    return msg.trim();
+}

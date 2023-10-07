@@ -7,7 +7,6 @@ const commentShema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
-        unique: true,
     },
     text: {
         type: String,
@@ -28,10 +27,17 @@ const commentShema = mongoose.Schema({
     active: {
         type: Boolean,
         default: true,
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: new Date()
+    },
+    updatedAt: {
+        type: Date,
+        default: new Date()
+    },
 }, {
     versionKey: false,
-    timestamps: true,
 });
 
 module.exports = mongoose.model('Comment', commentShema);

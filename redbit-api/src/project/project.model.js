@@ -47,7 +47,17 @@ const projectSchema = mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Tag'
         }]
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: new Date()
+    },
+    updatedAt: {
+        type: Date,
+        default: new Date()
+    },
 }, {
     versionKey: false
 });
+
+module.exports = mongoose.model('Project', projectSchema);
