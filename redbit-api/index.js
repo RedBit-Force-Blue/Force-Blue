@@ -1,14 +1,9 @@
 'use strict'
 
-const mongoose = require('mongoose');
+require('dotenv').config();
 
-exports.connect = async() => {
-    try {
-        mongoose.set('strictQuery', false);
-        await mongoose.connect(`${process.env.URI_MONGO}`);
-        console.log(`Connect to MongoDB @LosLlanos`);
-    } catch (err) {
-        console.error(err);
-        return err;
-    }
-}
+const { initServer } = require('./configs/app');
+const { connect } = require('./configs/mongo');
+
+initServer();
+connect();
