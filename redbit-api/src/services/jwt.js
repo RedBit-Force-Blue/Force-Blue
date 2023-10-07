@@ -10,6 +10,7 @@ exports.createToken = async(user)=>{
             surname: user.surname,
             lastname: user.lastname,
             email: user.email, 
+            role: user.role,
             iat: Math.floor(Date.now()/1000), 
             exp: Math.floor(Date.now()/ 1000)+(60*300)           
         }

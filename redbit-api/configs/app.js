@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3020 || 3200;
 
 const userRoutes = require('../src/User/user.routes')
-
+const tagRoutes = require('../src/Tag/tag.routes')
 
 /* ----- CONFIG SERVER ----- */
 app.use(express.urlencoded({ extended: false }));
@@ -20,6 +20,7 @@ app.use(morgan('dev'));
 /* ----- IMPORT ROUTES ----- */
 
 app.use('/user', userRoutes)
+app.use('/tag', tagRoutes)
 
 /* ----- DEPLOYED SERVER ----- */
 exports.initServer = () => {
