@@ -3,6 +3,7 @@ import SideBarComponent from '../../Components/sideBar/SideBarComponent'
 import backgroundImage1 from '../../images/space2.jpg'
 import './HomePage.css'
 
+
 export const HomePage = () => {
   return (
     <>

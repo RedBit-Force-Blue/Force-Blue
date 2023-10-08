@@ -4,7 +4,11 @@ import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
+import {LoginPage} from "./pages/Account/login/LoginPage"
+import { RegisterPage } from "./pages/Account/register/RegisterPage"
 import { ChatPage } from "./pages/Chat/ChatPage"
+import { CardProyect } from "./Components/CardProyect/CardProyect"
+import { CardsList } from "./Components/CardProyect/CardsList"
 import { ChatListPage } from "./pages/Chat/ChatListPage"
 
 function App() {
@@ -22,6 +26,14 @@ function App() {
           {
             path: '/testPage', 
             element:<TestPage/>
+          }, 
+          {
+            path :'/Login',
+            element:<LoginPage/>
+          },
+          {
+            path:'/Register', 
+            element: <RegisterPage/>
           },
           {
             path: '/chat',
@@ -30,7 +42,12 @@ function App() {
           {
             path: '/chatlist',
             element: <ChatListPage/>
+          },
+          {
+            path: '/cards',
+            element:<CardsList/>
           }
+
         ]
         }
       ])
