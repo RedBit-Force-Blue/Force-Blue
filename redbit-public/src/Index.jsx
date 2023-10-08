@@ -25,6 +25,10 @@ function App() {
           {
             path: '/cards',
             element:<CardProyect/>
+          },
+          {
+            path: '/cards-list',
+            element:<CardsList/>
           }
         ]
         }
