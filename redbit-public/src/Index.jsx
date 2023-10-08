@@ -6,9 +6,9 @@ import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
 import {LoginPage} from "./pages/Account/login/LoginPage"
 import { RegisterPage } from "./pages/Account/register/RegisterPage"
-
 import { ChatPage } from "./pages/Chat/ChatPage"
 import { CardProyect } from "./Components/CardProyect/CardProyect"
+import { CardsList } from "./Components/CardProyect/CardsList"
 
 function App() {
   try {
@@ -40,7 +40,7 @@ function App() {
           },
           {
             path: '/cards',
-            element:<CardProyect/>
+            element:<CardsList/>
           }
 
         ]

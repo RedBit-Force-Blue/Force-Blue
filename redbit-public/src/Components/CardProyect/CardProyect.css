@@ -2,7 +2,6 @@
 
 .card-container {
     max-width: 400px; /* El ancho máximo que desees */
-    margin: 0 auto; /* Centra el contenedor en el centro de la pantalla */
 }
 
 @font-face {
@@ -31,3 +30,35 @@
     padding: 5px;
 }
   
+/*Style to Stars*/
+/* Agrega estilos para las estrellas */
+.star {
+    font-size: 24px;
+    color: gray; /* Color de las estrellas vacías (puedes cambiarlo según tu preferencia) */
+    margin-right: 5px; /* Espacio entre las estrellas */
+  }
+  
+  /* Estilos para las estrellas llenas */
+  .filled {
+    color: #FFC300; /* Color de las estrellas llenas (amarillo) */
+  }
+
+  /*Style to Rating*/
+
+  /* Aplica flexbox a la clase 'flex-row' */
+.flex-row {
+    display: flex;
+    align-items: center; /* Alinea verticalmente en el centro si es necesario */
+  }
+  
+  /* Establece un espacio entre el valor de la calificación y las estrellas */
+  .rating-value {
+    margin-left: 10px; /* Ajusta el valor según sea necesario */
+  }
+  
+  /*Style to images*/
+  /* Establece un tamaño máximo para las imágenes dentro de la tarjeta */
+.card-container img {
+  max-width: 100%; /* Ajusta el tamaño máximo según tus preferencias */
+  height: auto;
+}
