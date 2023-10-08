@@ -4,6 +4,9 @@ import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
+import {LoginPage} from "./pages/Account/login/LoginPage"
+import { RegisterPage } from "./pages/Account/register/RegisterPage"
+
 
 function App() {
   try {
@@ -20,7 +23,16 @@ function App() {
           {
             path: '/testPage', 
             element:<TestPage/>
+          }, 
+          {
+            path :'/Login',
+            element:<LoginPage/>
+          },
+          {
+            path:'/Register', 
+            element: <RegisterPage/>
           }
+
         ]
         }
       ])
