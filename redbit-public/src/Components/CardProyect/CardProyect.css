@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;800&family=Russo+One&display=swap');
+
+.card-container {
+    max-width: 400px; /* El ancho máximo que desees */
+    margin: 0 auto; /* Centra el contenedor en el centro de la pantalla */
+}
+
+@font-face {
+    font-family: 'space-age';
+    src: url('../../../public/fonts/space-age.ttf') format('ttf');
+    font-weight: bold;
+    font-style: bold;
+}
+
+.title-card{
+    font-family: 'Gemunu Libre', sans-serif;
+    font-family: 'Russo One', sans-serif;
+    font-size: 25px;
+    padding: 5px;
+}
+
+.body-card{
+    
+    padding: 5px;
+}
+
+.body-title-card{
+    font-family: 'Gemunu Libre', sans-serif;
+    font-family: 'Russo One', sans-serif;
+    font-size: 17px;
+    padding: 5px;
+}
+  
