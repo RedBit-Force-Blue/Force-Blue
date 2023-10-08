@@ -4,7 +4,7 @@ import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
-import { CardProyect } from "./Components/CardProyect/CardProyect"
+import { CardsList } from "./Components/CardProyect/CardsList"
 
 function App() {
   try {
@@ -24,10 +24,6 @@ function App() {
           },
           {
             path: '/cards',
-            element:<CardProyect/>
-          },
-          {
-            path: '/cards-list',
             element:<CardsList/>
           }
         ]
