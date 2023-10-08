@@ -230,7 +230,6 @@ exports.registerAdmin = async (req, res) => {
         if (!dataValidate) {
           data.password = await encrypt(data.password);
           let user = new User(data);
-          console.log(user);
           await user.save();
           return user;
         } else {
@@ -242,7 +241,6 @@ exports.registerAdmin = async (req, res) => {
     };
 
     //validar si no hay usuario con estas credenciales
-
     switch (data.role) {
       case "MODERADOR":
         let userRegisted = await createUser(data);

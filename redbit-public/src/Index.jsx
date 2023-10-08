@@ -4,7 +4,10 @@ import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
-import { CardsList } from "./Components/CardProyect/CardsList"
+import {LoginPage} from "./pages/Account/login/LoginPage"
+import { RegisterPage } from "./pages/Account/register/RegisterPage"
+import { ChatPage } from "./pages/Chat/ChatPage"
+import { ProyectData } from "./pages/ProyectData/ProyectData"
 
 function App() {
   try {
@@ -21,11 +24,24 @@ function App() {
           {
             path: '/testPage', 
             element:<TestPage/>
+          }, 
+          {
+            path :'/Login',
+            element:<LoginPage/>
           },
           {
-            path: '/cards',
-            element:<CardsList/>
+            path:'/Register', 
+            element: <RegisterPage/>
+          },
+          {
+            path: '/chat',
+            element: <ChatPage/>
+          },
+          {
+            path: '/proyect-data',
+            element:<ProyectData/>
           }
+
         ]
         }
       ])

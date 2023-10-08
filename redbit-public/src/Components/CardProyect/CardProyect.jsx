@@ -1,10 +1,9 @@
 import React from 'react'
 import { Card, CardHeader, CardBody, Image, CardFooter } from "@nextui-org/react";
 import './CardProyect.css'
-import imagenCard from "../../images/bg-space.jpg"
-import StarRating from '../StarsCard/StarCard';
+import StarRating from './../StarsCard/StarCard'
 
-export const CardProyect = ({imagen}) => {
+export const CardProyect = ({ imagen }) => {
   const rating = 5;
   return (
     <div className='col'>
@@ -15,7 +14,7 @@ export const CardProyect = ({imagen}) => {
 
               <h4 className="title-card" >ARTEMIS II</h4>
               <img
-                alt="Card background"
+                alt="photo-proyect"
                 className="object-cover rounded-xl"
                 src={imagen}
                 width={350}
@@ -37,17 +36,13 @@ export const CardProyect = ({imagen}) => {
                 <p className="body-title-card">Collaborators</p>
                 <h3>@jrealiquez | @jcalderon | @mhurtado</h3>
               </div>
-
-              <div>
-                <p className="uppercase font-bold"></p>
-              </div>
             </CardBody>
             <CardFooter>
               <div className='flex-row'>
                 <StarRating rating={rating} />
                 <p className="rating-value">4.99</p>
               </div>
-              <div style={{WebkitMarginStart:'50px'}}>3 comments</div>
+              <div style={{ WebkitMarginStart: '50px' }}>3 comments</div>
             </CardFooter>
           </Card>
         </div>
