@@ -3,7 +3,7 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nex
 import { NavbarMenuToggle } from "@nextui-org/react";
 import { NavbarMenu } from "@nextui-org/react";
 import { NavbarMenuItem } from "@nextui-org/react";
-
+import logo1 from '../../images/nasa-space-black.png'
 
 export default function ComponentNavBar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -35,7 +35,6 @@ export default function ComponentNavBar() {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-   
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
       </NavbarContent>

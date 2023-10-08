@@ -5,6 +5,7 @@ import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
 import { ChatPage } from "./pages/Chat/ChatPage"
+import { ChatListPage } from "./pages/Chat/ChatListPage"
 
 function App() {
   try {
@@ -25,6 +26,10 @@ function App() {
           {
             path: '/chat',
             element: <ChatPage/>
+          },
+          {
+            path: '/chatlist',
+            element: <ChatListPage/>
           }
         ]
         }
