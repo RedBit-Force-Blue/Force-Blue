@@ -5,6 +5,7 @@ export const Skills = () => {
     return (
         <>
             <div style={{ height: '50vh', width: '100%' }} className='mb-5'>
+                <div class="position-absolute top-25 start-0 mt-4 ms-4"><button class="btn btn-warning"><i class="bi bi-arrow-left"></i></button></div>
                 <img
                     src={sun}
                     alt="sun"
