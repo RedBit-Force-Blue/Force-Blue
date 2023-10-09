@@ -24,13 +24,13 @@ export default function ComponentNavBar() {
   ];
 
   return (
-    <div>
+    <div className='my-custom-nav'>
 
     <Navbar
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className='my-custom-nav'
+     
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />

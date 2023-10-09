@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;800&family=Russo+One&display=swap');
 
 .card-container {
-    max-width: 400px; /* El ancho máximo que desees */
+    max-width: 450px; /* El ancho máximo que desees */
+    margin: auto; /* Centra el contenedor en el centro de la pantalla */
 }
 
 @font-face {
@@ -60,5 +61,5 @@
   /* Establece un tamaño máximo para las imágenes dentro de la tarjeta */
 .card-container img {
   max-width: 100%; /* Ajusta el tamaño máximo según tus preferencias */
-  height: 200px;
+  height: 150px;
 }

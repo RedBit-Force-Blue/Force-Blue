@@ -1,9 +1,15 @@
 import React from 'react'
-
+import SideBarComponent from '../../Components/sideBar/SideBarComponent'
+import { CardsList } from '../../Components/CardProyect/CardsList'
+import './DashBoard.css'
 export const Dashboard = () => {
   return (
-    <div>
-        <h1>DashBoard</h1>
+    <>
+     <SideBarComponent/>
+    <div className='my-customHomePage'>
+    <CardsList/>
     </div>
+
+    </>
   )
 }

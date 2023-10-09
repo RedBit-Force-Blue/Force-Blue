@@ -13,6 +13,7 @@ import { CardsList } from "./Components/CardProyect/CardsList"
 import { ProyectData } from "./pages/ProyectData/ProyectData"
 import { ChatListPage } from "./pages/Chat/ChatListPage"
 import { Profile } from "./pages/Profile/Profile"
+import { Dashboard } from './pages/Dashboard/Dashboard';
 
 function App() {
   try {
@@ -61,6 +62,10 @@ function App() {
           {
             path: '/profile',
             element: <Profile />
+          },
+          {
+            path:'dashboard',
+            element:<Dashboard/>
           }
 
         ]

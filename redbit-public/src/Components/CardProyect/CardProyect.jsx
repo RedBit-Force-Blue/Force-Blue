@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardHeader, CardBody, Image, CardFooter } from "@nextui-org/react";
 import './CardProyect.css'
-import StarRating from './../StarsCard/StarCard'
+import StarRating from '../StarsCard/StarCard';
 
 export const CardProyect = ({imagen, nameProject, description}) => {
   const rating = 5;
@@ -14,15 +14,15 @@ export const CardProyect = ({imagen, nameProject, description}) => {
 
               <h4 className="title-card" >{nameProject}</h4>
               <img
-                alt="photo-proyect"
+                alt="Card background"
                 className="object-cover rounded-xl"
                 src={imagen}
-                width={350}
+                width={450}
                 height={200}
               />
             </CardHeader>
 
-            <CardBody className="pb-0 pt-2 px-4 flex-col items-start">
+            <CardBody>
               <div>
                 <p className="body-title-card">Description</p>
                 {
