@@ -7,7 +7,7 @@ import { MsgYou } from './MsgYou'
 import { useLocation } from 'react-router-dom'
 
 export const ChatPage = () => {
-    const socket = io("/", { autoConnect: false })
+    const socket = io("/")
 
     const { state } = useLocation()
 
@@ -17,9 +17,9 @@ export const ChatPage = () => {
         password: ''
     })
     const [messages, setMessages] = useState([])
-    const [token, setToken] = useState(state.token)
+    const [token, setToken] = useState('')
 
-    const [id, setId] = useState(state.id)
+    const [id, setId] = useState()
 
     const sendMessage = async () => {
         try {
@@ -28,39 +28,38 @@ export const ChatPage = () => {
                 'Authorization': token
             };
 
-            const { data } = await axios.post('http://localhost:3022/chat/send/6521cbaa5570bfb8b4355c06', { message: message }, { headers: headers })
-            
-            if (data) {
-                socket.emit('sendmessage', {
-                    message,
-                    to: '6521c80674691b6b12b52b09'
-                })
+            await axios.post('http://localhost:3022/chat/send/6521cbaa5570bfb8b4355c06', { message: message }, { headers: headers })
 
-                receivedMessage('mensaje enviado')
-                setMessage('')
-            }
+            socket.emit('sendmessage', {
+                message,
+                to: '6521c80674691b6b12b52b09'
+            })
+
+            receivedMessage('mensaje enviado')
+            setMessage('')
+
         } catch (err) {
             console.error(err)
         }
     }
 
-    // const handleForm = (e) => {
-    //     setData({
-    //         ...data,
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
+    const handleForm = (e) => {
+        setData({
+            ...data,
+            [e.target.name]: e.target.value
+        })
+    }
 
-    // const login = async () => {
-    //     try {
-    //         const { data: log } = await axios.post('http://localhost:3022/user/login', data)
-
-    //         setId(log.logged.id)
-    //         setToken(log.token)
-    //     } catch (err) {
-    //         console.error(err)
-    //     }
-    // }
+    const login = async () => {
+        try {
+            const { data: log } = await axios.post('http://localhost:3022/user/login', data)
+            console.log('logged')
+            setId(log.logged.id)
+            setToken(log.token)
+        } catch (err) {
+            console.error(err)
+        }
+    }
 
     const getMessages = async () => {
         try {
@@ -71,10 +70,10 @@ export const ChatPage = () => {
 
             const { data } = await axios('http://localhost:3022/chat/get_mymsg/6521cbaa5570bfb8b4355c06', { headers: headers })
 
-            if (data) {
-                setMessages(data.messages.messages)
-                return data
-            }
+
+            setMessages(data.messages.messages)
+            return data
+
         } catch (err) {
             console.error(err)
         }
@@ -97,7 +96,6 @@ export const ChatPage = () => {
 
     useEffect(() => {
         socket.auth = { userId: id }
-        socket.connect()
 
         getMessages()
 
@@ -107,13 +105,26 @@ export const ChatPage = () => {
             socket.off('newmessage')
         }
 
-    }, [])
+    }, [id])
 
     return (
         <div className='bodyTest'>
             <div className="--dark-theme" id="chat">
-                <div className="chat__conversation-board">
 
+                <div className="chat__conversation-board">
+                    <div className='form-group'>
+                        <label htmlFor='username'>Username</label>
+                        <input type='text' className='form-control' id='username' placeholder='Enter username' name='username' onChange={handleForm} />
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='password'>Password</label>
+                        <input type='password' className='form-control' id='password' placeholder='Password' name='password' onChange={handleForm} />
+                    </div>
+                    <br/>
+                    <button className='btn btn-primary' onClick={login}>Subir</button>
+
+                    <br/>
+                    <br/>
                     {
                         messages.map((m) => (
                             m.from === id ? (
