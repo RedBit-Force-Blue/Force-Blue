@@ -6,7 +6,6 @@
     width: 25vh; /* Ancho deseado */
     height: 100vh; /* Alto de la ventana */
     background-color: #fff; /* Color de fondo opcional */
-    z-index: 1000; /* Z-index para controlar la superposición */
     max-width: 25vh; 
     min-height: 75%;
   }

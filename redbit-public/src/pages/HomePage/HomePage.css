@@ -1,0 +1,9 @@
+  .my-customHomePage{
+    margin-left: 200px;
+    margin-top: 20px;
+  }
+  @media screen and (max-width: 500px) {
+    .my-customHomePage {
+        margin-left: 0; /* Oculta la tabla en pantallas pequeñas */
+    }
+  }

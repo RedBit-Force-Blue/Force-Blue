@@ -3,6 +3,7 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nex
 import { NavbarMenuToggle } from "@nextui-org/react";
 import { NavbarMenu } from "@nextui-org/react";
 import { NavbarMenuItem } from "@nextui-org/react";
+import './NavBar.css'
 
 
 export default function ComponentNavBar() {
@@ -28,6 +29,7 @@ export default function ComponentNavBar() {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      className='my-custom-nav'
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />

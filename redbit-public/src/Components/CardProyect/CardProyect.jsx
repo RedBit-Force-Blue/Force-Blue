@@ -4,7 +4,7 @@ import './CardProyect.css'
 import imagenCard from "../../images/bg-space.jpg"
 import StarRating from '../StarsCard/StarCard';
 
-export const CardProyect = ({imagen}) => {
+export const CardProyect = ({imagen, nameProject, description}) => {
   const rating = 5;
   return (
     <div className='col'>
@@ -13,19 +13,29 @@ export const CardProyect = ({imagen}) => {
           <Card className="py-4">
             <CardHeader className="overflow-visible py-2 flex-col">
 
-              <h4 className="title-card" >ARTEMIS II</h4>
+              <h4 className="title-card" >{nameProject}</h4>
               <img
                 alt="Card background"
                 className="object-cover rounded-xl"
                 src={imagen}
                 width={350}
+                height={200}
               />
             </CardHeader>
 
             <CardBody className="pb-0 pt-2 px-4 flex-col items-start">
               <div>
                 <p className="body-title-card">Description</p>
-                <small className="text-default-500" style={{ padding: '2px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus tempore ut provident temporibus officiis. Incidunt temporibus repudiandae praesentium iure deserunt. Optio dolore eveniet, ea nisi libero nihil. Nihil facere, voluptatem, temporibus delectus ex hic natus sit ipsam, dolores nulla minima.</small>
+                {
+                  description ? (
+                    <small className="text-default-500" style={{ padding: '2px' }}>{description}</small>
+                    
+                    ):(
+
+                      <small className="text-default-500" style={{ padding: '2px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus tempore ut provident temporibus officiis. Incidunt temporibus repudiandae praesentium iure deserunt. Optio dolore eveniet, ea nisi libero nihil. Nihil facere, voluptatem, temporibus delectus ex hic natus sit ipsam, dolores nulla minima.</small>
+                    )
+                    
+                }
               </div>
 
               <div>
