@@ -64,7 +64,7 @@ function App() {
             element: <Profile />
           },
           {
-            path:'dashboard',
+            path:'/dashboard',
             element:<Dashboard/>
           }
 

@@ -13,18 +13,10 @@ export default function ComponentNavBar() {
   const menuItems = [
     "Profile",
     "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
   ];
 
   return (
-    <div className='my-custom-nav'>
+    // <div className='my-custom-nav'>
 
     <Navbar
       isBordered
@@ -38,38 +30,28 @@ export default function ComponentNavBar() {
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <p className="font-bold text-inherit">ACME</p>
+          <p className="font-bold text-inherit">REDBIT</p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
      
-          <p className="font-bold text-inherit">ACME</p>
+          <p className="font-bold text-inherit">REDBIT</p>
         </NavbarBrand>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/dashboard">
             Dashboard
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
           </Link>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link href="/login">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
+          <Button as={Link} color="warning" href="/register" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
@@ -92,7 +74,7 @@ export default function ComponentNavBar() {
         ))}
       </NavbarMenu>
     </Navbar>
-    </div>
+    // </div>
 
   );
 }

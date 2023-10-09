@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Mail, Facebook, Twitter } from 'react-feather';
 import Sweet from 'sweetalert2'
 /* import { AuthContext } from '../../../Index'; */
+import '../register/Register.css'
 
 export const LoginPage = () => {
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ export const LoginPage = () => {
       localStorage.setItem('3Tr13c', JSON.stringify(data.logged))
       /* setLoggedIn(true)
       setDataUser(data.logged) */
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       console.error(err);
       Sweet.fire({
@@ -40,10 +41,12 @@ export const LoginPage = () => {
     }
   }
   return (
-    <div className='bg-[#1e1e1e] min-h-screen flex items-center justify-center'>
+    
+      <div className='body-custom'>
+    <div className=' min-h-screen flex items-center justify-center'>
       <div className='max-sm:w-full p-8 flex flex-col justify-around gap-9'>
         <div className='w-full'>
-          <h1 className='w-full text-center pb-8 text-white font-bold text-4xl'>Log In to Ya Voy</h1>
+          <h1 className='w-full text-center pb-8 text-white font-bold text-4xl'>Log In to REDBIT</h1>
           <div className='flex flex-col gap-3'>
             <button className='w-full px-4 py-2 border-[1px] flex justify-center gap-6 items-center rounded-3xl border-white'>
               <span
@@ -119,10 +122,13 @@ export const LoginPage = () => {
           <hr className='w-full border-[1px]' />
           <p className='pt-4 text-sm'>
             <span className='text-slate-300'>Don't have an account? </span>
-            <Link className='text-white underline font-semibold' to={'/register'}>Sign Up for Ya voy</Link>
+            <Link className='text-white underline font-semibold' to={'/register'}>Sign Up for REDBIT</Link>
           </p>
         </div>
       </div>
     </div>
+
+    </div>
+
   )
 }

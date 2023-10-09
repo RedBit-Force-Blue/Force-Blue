@@ -31,7 +31,11 @@ const tags =[
 
 exports.addTag = async(req, res) => {
     try {
-        
+        let tagActive = await Tag.findOne({name:'missions'})
+
+        if (tagActive) {
+            return console.log('tag has been created')
+        }
         await Promise.all(tags.map(async taged=>{
             const tag = new Tag(taged);
            await tag.save();

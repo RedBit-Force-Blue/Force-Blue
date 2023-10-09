@@ -11,6 +11,7 @@ export const CardProyect = ({imagen, nameProject, description}) => {
         
           <Card className="py-4">
             <CardHeader className="overflow-visible py-2 flex-col">
+              <div className='card-container img '>
 
               <h4 className="title-card" >{nameProject}</h4>
               <img
@@ -18,8 +19,9 @@ export const CardProyect = ({imagen, nameProject, description}) => {
                 className="object-cover rounded-xl"
                 src={imagen}
                 width={450}
-                height={200}
-              />
+                
+                />
+                </div>
             </CardHeader>
 
             <CardBody>

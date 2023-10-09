@@ -61,5 +61,5 @@
   /* Establece un tamaño máximo para las imágenes dentro de la tarjeta */
 .card-container img {
   max-width: 100%; /* Ajusta el tamaño máximo según tus preferencias */
-  height: 150px;
+  max-height: 150px;
 }
