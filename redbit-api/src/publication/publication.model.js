@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const publicactionSchema = mongoose.Schema({
     user: {
-        tyep: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
@@ -19,7 +19,6 @@ const publicactionSchema = mongoose.Schema({
         type: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Comment',
-            unique: true
         }]
     },
     likes: {
@@ -33,6 +32,12 @@ const publicactionSchema = mongoose.Schema({
             type: Number,
             default: 0
         }
+    },
+    tags: {
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Tag'
+        }]
     },
     active: {
         type: Boolean,
@@ -49,3 +54,5 @@ const publicactionSchema = mongoose.Schema({
 }, {
     versionKey: false,
 });
+
+module.exports = mongoose.model('Publication', publicactionSchema);

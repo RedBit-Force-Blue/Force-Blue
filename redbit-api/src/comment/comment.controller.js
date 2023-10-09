@@ -2,6 +2,8 @@
 
 const Comment = require('./comment.model');
 const User = require('../User/user.model');
+const Publication = require('../publication/publication.model');
+const Project = require('../project/project.model');
 const { verify } = require('../utils/validate');
 
 /* --- ADD --- */
@@ -80,6 +82,12 @@ exports.del = async(req, res) => {
         if (comment.user != sub || qui != sub)
             if (role != 'ADMIN')
                 return res.status(400).send({ message: `You cannot delete this comment` });
+        await Publication.updateMany({ comments: qci }, {
+            $pull: { comments: qci }
+        }, { new: true });
+        await Project.updateMany({ comments: qci }, {
+            $pull: { comments: qci }
+        }, { new: true });
         await Comment.updateOne({ _id: qci }, {
             $set: { active: false }
         }, { new: true });

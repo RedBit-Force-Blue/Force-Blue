@@ -21,14 +21,23 @@ const projectSchema = mongoose.Schema({
         type: String,
         require: true,
     },
-    commets: {
+    publications: {
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Publication',
+        }],
+    },
+    comments: {
         type: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Comment',
         }],
     },
     images: {
-        type: [String]
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'File'
+        }]
     },
     likes: {
         users: {
@@ -47,6 +56,10 @@ const projectSchema = mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Tag'
         }]
+    },
+    active: {
+        type: Boolean,
+        default: true
     },
     createdAt: {
         type: Date,
