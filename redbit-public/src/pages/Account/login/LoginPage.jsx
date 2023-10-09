@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Mail, Facebook, Twitter } from 'react-feather';
 import Sweet from 'sweetalert2'
-import { AuthContext } from '../../../Index';
+//import { AuthContext } from '../../../Index';
 
 export const LoginPage = () => {
   const navigate = useNavigate()

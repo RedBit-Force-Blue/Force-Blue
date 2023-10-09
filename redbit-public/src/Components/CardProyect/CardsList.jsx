@@ -1,9 +1,9 @@
 import React from 'react';
 import { CardProyect } from './CardProyect';
-import imagen1 from '../../../images/bg-space.jpg';
-import imagen2 from '../../../images/bg-space-2.jpg';
-import imagen3 from '../../../images/bg-space-3.jpg';
-import imagen4 from '../../../images/bg-space-4.jpg';
+import imagen1 from '../../images/bg-space.jpg';
+import imagen2 from '../../images/bg-space-2.jpg';
+import imagen3 from '../../images/bg-space-3.jpg';
+import imagen4 from '../../images/bg-space-4.jpg';
 import {Spacer} from "@nextui-org/react";
 
 

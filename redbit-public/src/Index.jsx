@@ -1,6 +1,5 @@
 import { useEffect, useState, createContext } from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import App from './App';
 import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
@@ -14,6 +13,8 @@ import { CardsList } from "./Components/CardProyect/CardsList"
 import { ProyectData } from "./pages/ProyectData/ProyectData"
 import { ChatListPage } from "./pages/Chat/ChatListPage"
 import { Profile } from "./pages/Profile/Profile"
+import { Skills } from './pages/Skills/Skills';
+import { ProyectMain } from './pages/ProyectData/ProyectMain';
 
 function App() {
   try {
@@ -56,8 +57,18 @@ function App() {
             element: <LoginChat />
           },
           {
-            path: '/proyect-data',
-            element: <ProyectData />
+            path: '/proyect',
+            element: <ProyectMain/>,
+            children: [
+              {
+                path: 'proyect-data',
+                element: <ProyectData/>
+              },
+              {
+                path: 'skills',
+                element: <Skills/>
+              }
+            ]
           },
           {
             path: '/profile',
@@ -76,19 +87,6 @@ function App() {
     console.log(error)
   }
 
-  useEffect(() => {
-    const tok = localStorage.getItem('token')
-    if (tok) {
-      setLoggedIn(true)
-      setDataUser(JSON.parse(localStorage.getItem('3Tr13c')))
-    }
-  }, [])
-
-  return (
-    <>
-      <AuthContext.Provider value={{ loggedIn, dataUser, setDataUser, setLoggedIn }}>
-        <RouterProvider router={routes} />
-      </AuthContext.Provider>
-    </>
-  )
 }
+
+export default App;
