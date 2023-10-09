@@ -20,9 +20,11 @@ app.use(helmet());
 app.use(morgan('dev'));
 
 /* ----- IMPORT ROUTES ----- */
-
 app.use('/user', userRoutes)
 app.use('/tag', tagRoutes)
+app.use('/comment', require('../src/comment/comment.routes'));
+app.use('/publication', require('../src/publication/publication.routes'));
+app.use('/project', require('../src/project/project.routes'));
 app.use('/chat', chatRoutes)
 
 /* ----- DEPLOYED SERVER ----- */
