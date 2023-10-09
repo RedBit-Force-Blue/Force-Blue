@@ -1,7 +1,6 @@
 import React from 'react'
 import SideBarComponent from '../../Components/sideBar/SideBarComponent'
 
-
 export const HomePage = () => {
   return (
     <>
