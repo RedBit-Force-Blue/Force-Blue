@@ -152,11 +152,11 @@ exports.UpdateUser = async(req, res) => {
 
         //parametros no permitidos
         let paramsDenied = {
-            email: data ? .email,
-            password: data ? .password,
-            role: data ? .role,
-            rank: data ? .rank,
-            history: data ? .history,
+            email: data?.email,
+            password: data?.password,
+            role: data?.role,
+            rank: data?.rank,
+            history: data?.history,
         };
 
         const hasDeniedParams = Object.values(paramsDenied).some(
