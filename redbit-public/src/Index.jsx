@@ -6,6 +6,7 @@ import { NotFound } from "./pages/NotFound"
 import { TestPage } from "./pages/TestPage/TestPage"
 import { ChatPage } from "./pages/Chat/ChatPage"
 import { CardProyect } from "./Components/CardProyect/CardProyect"
+import { LoginChat } from "./pages/Chat/LoginChat"
 
 function App() {
   try {
@@ -30,6 +31,10 @@ function App() {
           {
             path: '/cards',
             element:<CardProyect/>
+          },
+          {
+            path: '/loginchat',
+            element: <LoginChat/>
           }
         ]
         }

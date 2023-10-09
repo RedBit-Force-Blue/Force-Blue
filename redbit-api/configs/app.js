@@ -11,13 +11,8 @@ const port = process.env.PORT || 3020 || 3200;
 const User = require('./../src/User/user.model');
 
 const server = http.createServer(app);
-const configCors = {
-    cors: {
-        origin: '*'
-    }
-}
 
-const socketServer = new Server(server, configCors);
+const socketServer = new Server(server);
 
 const userRoutes = require('../src/User/user.routes')
 const tagRoutes = require('../src/Tag/tag.routes')
@@ -32,30 +27,42 @@ app.use(helmet());
 app.use(morgan('dev'));
 
 /* ----- SOCKET SERVER ----- */
-// socketServer.use(async (socket, next) => {
-//     try {
-//         const user = await User.findById(socket.handshake.auth.userLogged)
-//     } catch (err) {
-//         console.error(err)
-//         next(new Error("Error getting user"))
-//     }
-// })
-
+var users = []
 socketServer.on('connection', (socket) => {
-    console.log(socket.connected)
-    socket.on('send-message', (data) => {
+
+    users.push({
+        socketId: socket.id,
+        userId: socket.userId
+    })
+
+    console.log('User after push', users)
+
+    socket.on('sendmessage', ({ to, message }) => {
+
+        const uid = users.find(item => item.userId === to)
         
-        socket.emit('new-message', data)
+        socket.to(uid.socketId).emit('newmessage', {
+            message
+        })
     })
 })
 
-// socketServer.use((sock,  next)=> {
-//     const user = sock.handshake.auth.userLogged;
-//     //Validar que el usuario exista en la base de datos.S
-//     if(!user) return next(new Error('Invalid username'))
-//     sock.user = user;
-//     next()
-// })
+socketServer.use((sock, next) => {
+    const userId = sock.handshake.auth.userId;
+
+    users = []
+    for (let [id, socket] of socketServer.of('/').sockets) {
+        if (socket.userId) {
+            users.push({
+                socketId: id,
+                userId: socket.userId
+            })
+        }
+    }
+
+    sock.userId = userId;
+    next()
+})
 
 /* ----- IMPORT ROUTES ----- */
 
