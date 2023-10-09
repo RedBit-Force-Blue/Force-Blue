@@ -8,7 +8,7 @@ export const CardProyect = ({imagen, nameProject, description}) => {
   return (
     <div className='col'>
       <div>
-        <div className="card-container">
+        
           <Card className="py-4">
             <CardHeader className="overflow-visible py-2 flex-col">
 
@@ -55,7 +55,7 @@ export const CardProyect = ({imagen, nameProject, description}) => {
               <div style={{ WebkitMarginStart: '50px' }}>3 comments</div>
             </CardFooter>
           </Card>
-        </div>
+
       </div>
 
     </div>

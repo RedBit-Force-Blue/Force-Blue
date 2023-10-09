@@ -1,6 +1,6 @@
 import React from 'react'
 import backgroundImage1 from '../../images/space2.jpg'
-
+import './HomePage.css'
 
 export const HomePage = () => {
   return (
