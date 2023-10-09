@@ -4,6 +4,8 @@ import { ChevronsLeft } from 'react-feather'
 import { verify } from '../js/utils'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import './Register.css'
+import { ListSelect } from '../../../Components/ListSelect/ListSelect'
 // import { AuthContext } from '../Index'
 
 export const RegisterPage = () => {
@@ -12,6 +14,7 @@ export const RegisterPage = () => {
   // const { setDataUser, setLoggedIn } = useContext(AuthContext)
   const [curr, setCurr] = useState(0)
   const [img, setImg] = useState()
+  const [tag, setTag] = useState()
   const [form, setForm] = useState({
     name: '',
     lastname: '',
@@ -19,8 +22,20 @@ export const RegisterPage = () => {
     phone: '',
     email: '',
     age: '',
-    password: ''
+    password: '',
+    tags:[]
   });
+
+  const sendTags = async(id)=>{
+    try {
+      setForm(prevFormState => ({
+        ...prevFormState,  
+        tags: id      
+      }));
+    } catch (error) {
+      
+    }
+  }
 
   const goNext = () => {
     setCurr(curr => curr === 4 ? 0 : curr + 1)
@@ -140,7 +155,9 @@ export const RegisterPage = () => {
   }, [curr])
 
   return (
-    <div className='min-h-screen bg-[#1e1e1e]'>
+    <div className='body-custom'>
+      <div className='.overlay-elements'>
+
       <div className='flex flex-col justify-center items-center'>
         <Link
           to={'/'}
@@ -352,6 +369,71 @@ export const RegisterPage = () => {
 
             <div className='min-w-[100%] min-h-[100vh] flex justify-center'>
               <div className='max-sm:w-full sm:w-96 h-full px-8 space-y-6 flex flex-col justify-center items-center'>
+                <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/color/boy-dynamic-color.png" />
+                <p className='text-center justify-center font-medium text-slate-300'>We are going to collect some important information to create the profile. Let's start with the most important...</p>
+                <div className='space-y-4 w-full'>
+                  <div className='w-full'>
+                    <label
+                      htmlFor="name"
+                      className='text-base text-slate-300'
+                    >
+                      Name
+                    </label>
+                    <ListSelect tag={sendTags}/>
+                  </div>
+                  <div className='w-full'>
+                    <label
+                      htmlFor="surname"
+                      className='text-base text-slate-300'
+                    > 
+                      LastName
+                    </label>
+                    <input
+                      className='w-full px-3 py-2 mt-1 border-[2px] border-slate-100 bg-transparent rounded-lg text-white'
+                      placeholder='Example "Estrada Lopez"'
+                      onChange={handleChange}
+                      name='lastname'
+                      inputMode='text'
+                    />
+                  </div>
+                  <div className='w-full'>
+                    <label
+                      htmlFor="username"
+                      className='text-base text-slate-300'
+                    > 
+                      Username
+                    </label>
+                    <input
+                      className='w-full px-3 py-2 mt-1 border-[2px] border-slate-100 bg-transparent rounded-lg text-white'
+                      placeholder='Example "eLopez"'
+                      onChange={handleChange}
+                      name='username'
+                      inputMode='text'
+                    />
+                  </div>
+                </div>
+                <div className='w-full flex gap-4'>
+                  <Link
+                    to={'/'}
+                    className='w-full px-4 py-2 bg-gray-400 rounded-3xl font-bold text-white text-center'
+                  >
+                    Back
+                  </Link>
+                  <button
+                    className='w-full px-4 py-2 bg-lime-600 rounded-3xl font-bold text-white'
+                    onClick={(e) => { e.preventDefault(); goNext() }}
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div className='min-w-[100%] min-h-[100vh] flex justify-center'>
+              <div className='max-sm:w-full sm:w-96 h-full px-8 space-y-6 flex flex-col justify-center items-center'>
                 <img src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/premium/lock-dynamic-premium.png" />
                 <p className='text-center justify-center font-medium text-slate-300'>Now yes... so that you can have point security, a password is necessary respectively. Create one but without forgetting it...</p>
                 <div className='w-full space-y-4'>
@@ -405,6 +487,8 @@ export const RegisterPage = () => {
           </div>
         </div>
       </div>
+      </div>
+
     </div>
   )
 }

@@ -3,11 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Mail, Facebook, Twitter } from 'react-feather';
 import Sweet from 'sweetalert2'
-import { AuthContext } from '../../../Index';
+/* import { AuthContext } from '../../../Index'; */
 
 export const LoginPage = () => {
   const navigate = useNavigate()
-  const { loggedIn, dataUser, setDataUser, setLoggedIn } = useContext(AuthContext)
+  /* const { loggedIn, dataUser, setDataUser, setLoggedIn } = useContext(AuthContext) */
   const [form, setForm] = useState({
     username: '',
     password: ''
@@ -24,8 +24,8 @@ export const LoginPage = () => {
       const { data } = await axios.post(`http://localhost:3022/user/logIn`, form)
       localStorage.setItem('token', data.token)
       localStorage.setItem('3Tr13c', JSON.stringify(data.logged))
-      setLoggedIn(true)
-      setDataUser(data.logged)
+      /* setLoggedIn(true)
+      setDataUser(data.logged) */
       navigate('/')
     } catch (err) {
       console.error(err);

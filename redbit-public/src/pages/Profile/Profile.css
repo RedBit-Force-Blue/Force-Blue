@@ -1,0 +1,11 @@
+.profile-header {
+    transform: translateY(7rem);
+}
+
+.bodyProfile {
+    /* background: #d6d4dc;
+    background: -webkit-linear-gradient(to right, #d6d4dc, #d6d2d4);
+    background: linear-gradient(to right, #b2b1b4, #bfbdbe);
+    min-height: 100vh; */
+    background-color: white;
+}
