@@ -14,6 +14,8 @@ import { ProyectData } from "./pages/ProyectData/ProyectData"
 import { ChatListPage } from "./pages/Chat/ChatListPage"
 import { Profile } from "./pages/Profile/Profile"
 import { Dashboard } from './pages/Dashboard/Dashboard';
+import { Skills } from './pages/Skills/Skills';
+import { ProyectMain } from './pages/ProyectData/ProyectMain';
 
 function App() {
   try {
@@ -56,8 +58,18 @@ function App() {
             element: <LoginChat />
           },
           {
-            path: '/proyect-data',
-            element: <ProyectData />
+            path: '/proyect',
+            element: <ProyectMain/>,
+            children: [
+              {
+                path: 'proyect-data',
+                element: <ProyectData/>
+              },
+              {
+                path: 'skills',
+                element: <Skills/>
+              }
+            ]
           },
           {
             path: '/profile',
@@ -79,7 +91,6 @@ function App() {
   } catch (error) {
     console.log(error)
   }
-  
 }
 
 export default App;
