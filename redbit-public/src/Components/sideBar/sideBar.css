@@ -1,0 +1,18 @@
+
+.my-custom-table {
+    position: fixed;
+    top: 68px; /* Fijar en la parte superior de la ventana */
+    left: 0; /* Fijar en la parte izquierda de la ventana */
+    width: 25vh; /* Ancho deseado */
+    height: 100vh; /* Alto de la ventana */
+    background-color: #fff; /* Color de fondo opcional */
+    z-index: 1000; /* Z-index para controlar la superposición */
+    max-width: 25vh; 
+    min-height: 75%;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .my-custom-table {
+      display: none; /* Oculta la tabla en pantallas pequeñas */
+    }
+  }
