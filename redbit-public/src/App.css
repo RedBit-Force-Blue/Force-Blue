@@ -50,7 +50,7 @@
 /*  */
 
 /* App.css */
-body {
+/* body {
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #007BFF, #00DFFF);
@@ -60,7 +60,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; 
-}
+} */
 
 .profile-card-wrapper {
   background-color: #fff;
