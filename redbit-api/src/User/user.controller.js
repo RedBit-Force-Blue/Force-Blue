@@ -316,6 +316,46 @@ exports.getUser = async(req, res) => {
     }
 };
 
+exports.addTag = async (req, res) => {
+  try {
+    //data
+    let idUser = req.params.id;
+    let data = req.body;
+
+    console.log(data);
+    // validacion de parametros
+    let params = {
+      name: data.name,
+    };
+    // verificar si existen parametros
+    let userExists = await Hotel.findOne({ _id: idUser });
+    let tagExists = await Hotel.findOne({ _id: idUser,"tags.name": data.name });
+    if (!userExists)
+      return res
+        .status(404)
+        .send({ message: `user didn't find or some data already exists` });
+    if (tagExists)
+      return res.status(409).send({ message: `tag already taken` });
+
+    //añadir habitacion
+    let addTaged = await User.findOneAndUpdate(
+      { _id: idUser },
+      {
+        $push: {
+          tags: data,
+        },
+      },
+      { new: true }
+    );
+    // verificar actualizacion 
+    if (!addTaged) return res.status(404).send({ message: "error adding tag" });
+    return res.send({ message: "tag created", addTaged });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).send({ message: "error adding tag" });
+  }
+};
+
 
 exports.addImage = async(req, res) => {
     try {

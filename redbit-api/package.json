@@ -10,6 +10,7 @@
     "author": "Force Blue",
     "license": "MIT",
     "dependencies": {
+        "axios": "^1.5.1",
         "bcrypt": "^5.1.1",
         "connect-multiparty": "^2.2.0",
         "cors": "^2.8.5",

@@ -24,6 +24,7 @@ api.get('/getUsers', [ensureAuth], userController.getUsers)
 
 //update 
 api.put ('/updateUser/:id/:username',[ensureAuth], userController.UpdateUser )
+api.put('/addTag/:id',[ensureAuth], userController.addTag)
 
 //image
 api.put('/uploadImage/:id',upload, userController.addImage);

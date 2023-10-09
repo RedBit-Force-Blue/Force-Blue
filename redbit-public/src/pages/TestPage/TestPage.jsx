@@ -1,7 +1,8 @@
 import React from 'react'
+import { ListSelect } from '../../Components/ListSelect/ListSelect'
 
 export const TestPage = () => {
   return (
-    <h1>esto es una pagina de prueba</h1>
+   <ListSelect/>
     )
 }

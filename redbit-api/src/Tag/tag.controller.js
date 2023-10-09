@@ -1,22 +1,48 @@
+
 'use strict'
 
 const Tag = require('./tag.model');
 
+const tags =[
+    {name:'missions' , active: true},
+    {name:'Spaceships and Rockets' , active: true},
+    {name:'Communicating with Missions' , active: true},
+    {name:'Artemis' , active: true},
+    {name:'James Webb Space Telescope' , active: true},
+    {name:'Hubble Space Telescope' , active: true},
+    {name:'International Space Station' , active: true},
+    {name:'OSIRIS-REx' , active: true},
+    {name:'Humans in the space' , active: true},
+    {name:'Why Go to Space' , active: true},
+    {name:'Astronauts' , active: true},
+    {name:'Commercial Space' , active: true},
+    {name:'Destinations' , active: true},
+    {name:'Spaceships and Rockets' , active: true},
+    {name:'Living in Space' , active: true},
+    {name:'Earth & Climate' , active: true},
+    {name:'Explore Earth Science' , active: true},
+    {name:'Climate Change' , active: true},
+    {name:'Earth, Our Planet' , active: true},
+    {name:'Earth Science in Action' , active: true},
+    {name:'Earth Multimedia' , active: true},
+    {name:'Earth Data' , active: true},
+    {name:'Earth Science Researchers' , active: true},
+]
+
 exports.addTag = async(req, res) => {
     try {
-        const data = req.body;
-        const params = {
-            name: data.name,
-            active: data.active
-        }
-        const tag = new Tag(params);
-        await tag.save();
+        
+        await Promise.all(tags.map(async taged=>{
+            const tag = new Tag(taged);
+           await tag.save();
 
-        return res.send({message: 'Tag creado correctamente', tag: tag});
+        })
+
+        )
+        console.log( 'Tag creado correctamente');
 
     } catch (err) {
         console.log(err);
-        return res.status(500).send({message: 'Error al crear el tag'});
     }
 }
 
@@ -25,7 +51,7 @@ exports.getTags = async(req, res) => {
 
         const tags = await Tag.find({active: true});
 
-        return res.send({tags: tags});
+        return res.send({ tags});
 
     } catch (err) {
         console.log(err);
@@ -96,4 +122,5 @@ exports.deleteTag = async(req, res) => {
         console.log(err);
         return res.status(500).send({message: 'Error al eliminar el tag'});
     }
+
 }
