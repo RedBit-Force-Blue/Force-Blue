@@ -12,6 +12,8 @@ import { CardProyect } from "./Components/CardProyect/CardProyect"
 import { LoginChat } from "./pages/Chat/LoginChat"
 import { CardsList } from "./Components/CardProyect/CardsList"
 import { ProyectData } from "./pages/ProyectData/ProyectData"
+import { ChatListPage } from "./pages/Chat/ChatListPage"
+import { Profile } from "./pages/Profile/Profile"
 
 function App() {
   try {
@@ -42,6 +44,10 @@ function App() {
             element: <ChatPage />
           },
           {
+            path: '/chatlist',
+            element: <ChatListPage />
+          },
+          {
             path: '/cards',
             element: <CardsList />
           },
@@ -52,6 +58,10 @@ function App() {
           {
             path: '/proyect-data',
             element: <ProyectData />
+          },
+          {
+            path: '/profile',
+            element: <Profile />
           }
 
         ]

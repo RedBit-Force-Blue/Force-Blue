@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'ConsolaMono';
+    src: url('../../fonts/ConsolaMono-Bold.ttf') format('truetype');
+}
+
+.fontConsolaMono {
+    font-family: 'ConsolaMono';
+}
+
+
+/* WAVES */
+
+.custom-shape-divider-bottom-1696794379 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1696794379 svg {
+    position: relative;
+    display: block;
+    width: calc(283% + 1.3px);
+    height: 180px;
+}
+
+.custom-shape-divider-bottom-1696794379 .shape-fill {
+    fill: #000000;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-bottom-1696794379 svg {
+        width: calc(279% + 1.3px);
+        height: 147px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-bottom-1696794379 svg {
+        width: calc(279% + 1.3px);
+        height: 81px;
+    }
+}
