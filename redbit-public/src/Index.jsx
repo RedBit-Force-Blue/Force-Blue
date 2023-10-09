@@ -1,5 +1,6 @@
-import React from "react"
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { useEffect, useState, createContext } from 'react';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import App from './App';
 import { RouterOutlet } from "./RouterOutlet"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { NotFound } from "./pages/NotFound"
@@ -65,5 +66,19 @@ function App() {
     console.log(error)
   }
 
+  useEffect(() => {
+    const tok = localStorage.getItem('token')
+    if (tok) {
+      setLoggedIn(true)
+      setDataUser(JSON.parse(localStorage.getItem('3Tr13c')))
+    }
+  }, [])
+
+  return (
+    <>
+      <AuthContext.Provider value={{ loggedIn, dataUser, setDataUser, setLoggedIn }}>
+        <RouterProvider router={routes} />
+      </AuthContext.Provider>
+    </>
+  )
 }
-export default App
