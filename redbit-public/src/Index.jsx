@@ -7,10 +7,10 @@ import { TestPage } from "./pages/TestPage/TestPage"
 import { LoginPage } from "./pages/Account/login/LoginPage"
 import { RegisterPage } from "./pages/Account/register/RegisterPage"
 import { ChatPage } from "./pages/Chat/ChatPage"
-import { CardProyect } from "./Components/CardProyect/CardProyect"
 import { LoginChat } from "./pages/Chat/LoginChat"
-import { CardsList } from "./Components/CardProyect/CardsList"
 import { ProyectData } from "./pages/ProyectData/ProyectData"
+import { CardProyect } from "./Components/CardProyect/CardProyect"
+import { CardsList } from "./Components/CardProyect/CardsList"
 
 function App() {
   try {

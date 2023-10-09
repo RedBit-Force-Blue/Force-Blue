@@ -8,6 +8,8 @@ const {
     verify,
     encrypt,
     check,
+    validateData,
+    checkPassword,
 } = require("../utils/validate");
 
 const { createToken } = require("../services/jwt");

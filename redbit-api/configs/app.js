@@ -18,6 +18,10 @@ const userRoutes = require('../src/User/user.routes')
 const tagRoutes = require('../src/Tag/tag.routes')
 const chatRoutes = require('../src/Chat/chat.routes')
 
+const userRoutes = require('../src/User/user.routes')
+const tagRoutes = require('../src/Tag/tag.routes')
+const chatRoutes = require('../src/Chat/chat.routes')
+
 
 /* ----- CONFIG SERVER ----- */
 app.use(express.urlencoded({ extended: false }));
@@ -70,6 +74,10 @@ app.use('/tag', tagRoutes)
 app.use('/comment', require('../src/comment/comment.routes'));
 app.use('/publication', require('../src/publication/publication.routes'));
 app.use('/project', require('../src/project/project.routes'));
+app.use('/chat', chatRoutes)
+
+app.use('/user', userRoutes)
+app.use('/tag', tagRoutes)
 app.use('/chat', chatRoutes)
 
 /* ----- DEPLOYED SERVER ----- */
